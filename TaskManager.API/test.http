@@ -1,0 +1,224 @@
+# Должна быть реализована возможность регистрации и авторизации пользователей.
+# POST https://localhost:5001/api/auth
+# Content-Type: application/json
+
+# {
+#     "login":"admin",
+#     "password":"admin"
+# }
+
+
+# POST https://localhost:5001/api/auth
+# Content-Type: application/json
+
+# {
+#     "login":"sergyarosh",
+#     "password":"sergyarosh"
+# }
+
+
+
+# Требования для пользователя:
+# - возможность создавать, удалять, редактировать, просматривать список задач.
+
+# GET https://localhost:5001/api/tasks
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjY0NzgwLCJleHAiOjE2MDMyNjY1ODAsImlhdCI6MTYwMzI2NDc4MH0.M63gsP9EHTbybdLd9xAoL0E7ILUxrQlOOH9pzsp_RCY
+
+# POST https://localhost:5001/api/tasks
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjYyNjcxLCJleHAiOjE2MDMyNjQ0NzEsImlhdCI6MTYwMzI2MjY3MX0.4UlQLpxCJmyuEZlXFFbvI41d9Q6WJLIF4yCrWvcOH3E
+# Content-Type: application/json
+
+# {
+#     "UserId" : 2,
+#     "TaskTitle": "Zadacha",
+#     "TaskDetails" : "TaskDetails 50",
+#     "TaskCreationDate" : "2020-10-5",
+#     "TaskStatus" : false,
+#     "TaskPriority" : "High"
+# }
+
+# PUT https://localhost:5001/api/tasks/1
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjY0NzgwLCJleHAiOjE2MDMyNjY1ODAsImlhdCI6MTYwMzI2NDc4MH0.M63gsP9EHTbybdLd9xAoL0E7ILUxrQlOOH9pzsp_RCY
+# Content-Type: application/json
+
+# {
+#     "UserId" : 3,
+#     "TaskTitle": "Task 111",
+#     "TaskDetails" : "TaskDetails 111",
+#     "TaskCreationDate" : "2020-09-10",
+#     "TaskStatus" : true,
+#     "TaskPriority" : "High"
+# }
+
+# DELETE https://localhost:5001/api/tasks/6
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjYyNjcxLCJleHAiOjE2MDMyNjQ0NzEsImlhdCI6MTYwMzI2MjY3MX0.4UlQLpxCJmyuEZlXFFbvI41d9Q6WJLIF4yCrWvcOH3E
+
+
+
+# - возможность просмотреть список задач по указанной дате.
+
+# GET https://localhost:5001/api/tasks/search?taskcreationdate=2020-10-02
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjYyNjcxLCJleHAiOjE2MDMyNjQ0NzEsImlhdCI6MTYwMzI2MjY3MX0.4UlQLpxCJmyuEZlXFFbvI41d9Q6WJLIF4yCrWvcOH3E
+
+
+# - поиск задач по заголовку.
+
+# GET https://localhost:5001/api/tasks/search?tasktitle=Task
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjYyNjcxLCJleHAiOjE2MDMyNjQ0NzEsImlhdCI6MTYwMzI2MjY3MX0.4UlQLpxCJmyuEZlXFFbvI41d9Q6WJLIF4yCrWvcOH3E
+
+# GET https://localhost:5001/api/tasks/search?tasktitle=Zadacha
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjYyNjcxLCJleHAiOjE2MDMyNjQ0NzEsImlhdCI6MTYwMzI2MjY3MX0.4UlQLpxCJmyuEZlXFFbvI41d9Q6WJLIF4yCrWvcOH3E
+
+
+# - просмотр списка задач в диапазоне дат.
+
+# GET https://localhost:5001/api/tasks/search?userid=2&StartDate=2020-10-02&EndDate=2020-10-04
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjYyNjcxLCJleHAiOjE2MDMyNjQ0NzEsImlhdCI6MTYwMzI2MjY3MX0.4UlQLpxCJmyuEZlXFFbvI41d9Q6WJLIF4yCrWvcOH3E
+
+# GET https://localhost:5001/api/tasks/search?userid=2&StartDate=2020-10-04&EndDate=2020-10-06
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjYyNjcxLCJleHAiOjE2MDMyNjQ0NzEsImlhdCI6MTYwMzI2MjY3MX0.4UlQLpxCJmyuEZlXFFbvI41d9Q6WJLIF4yCrWvcOH3E
+
+
+# - просмотр архива задач за указанный период времени.
+
+# GET https://localhost:5001/api/tasks/search?&StartDate=2020-09-02&EndDate=2020-10-11&taskstatus=true
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjY0NzgwLCJleHAiOjE2MDMyNjY1ODAsImlhdCI6MTYwMzI2NDc4MH0.M63gsP9EHTbybdLd9xAoL0E7ILUxrQlOOH9pzsp_RCY
+
+# GET https://localhost:5001/api/tasks/search?taskstatus=true
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjY0NzgwLCJleHAiOjE2MDMyNjY1ODAsImlhdCI6MTYwMzI2NDc4MH0.M63gsP9EHTbybdLd9xAoL0E7ILUxrQlOOH9pzsp_RCY
+
+#GET https://localhost:5001/api/tasks/search?userid=2&taskcreationdate=2020-10-05&taskstatus=false
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjYyNjcxLCJleHAiOjE2MDMyNjQ0NzEsImlhdCI6MTYwMzI2MjY3MX0.4UlQLpxCJmyuEZlXFFbvI41d9Q6WJLIF4yCrWvcOH3E
+
+
+# - другие параметры поиска
+
+# GET https://localhost:5001/api/tasks/search
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjYyNjcxLCJleHAiOjE2MDMyNjQ0NzEsImlhdCI6MTYwMzI2MjY3MX0.4UlQLpxCJmyuEZlXFFbvI41d9Q6WJLIF4yCrWvcOH3E
+
+# GET https://localhost:5001/api/tasks/search?userid=3
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjYyNjcxLCJleHAiOjE2MDMyNjQ0NzEsImlhdCI6MTYwMzI2MjY3MX0.4UlQLpxCJmyuEZlXFFbvI41d9Q6WJLIF4yCrWvcOH3E
+
+#GET https://localhost:5001/api/tasks/search?taskcreationdate=2020-10-05
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjYyNjcxLCJleHAiOjE2MDMyNjQ0NzEsImlhdCI6MTYwMzI2MjY3MX0.4UlQLpxCJmyuEZlXFFbvI41d9Q6WJLIF4yCrWvcOH3E
+
+
+# - возможность запланировать задачу на указанную дату.
+# - возможность назначать приоритет задаче.
+# - возможность отметить задачу как выполненную.
+# PUT https://localhost:5001/api/tasks/2
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjY0NzgwLCJleHAiOjE2MDMyNjY1ODAsImlhdCI6MTYwMzI2NDc4MH0.M63gsP9EHTbybdLd9xAoL0E7ILUxrQlOOH9pzsp_RCY
+# Content-Type: application/json
+
+# {
+#     "UserId" : 2,
+#     "TaskTitle": "Task 222",
+#     "TaskDetails" : "TaskDetails 111",
+#     "TaskCreationDate" : "2020-10-10",
+#     "TaskStatus" : true,
+#     "TaskPriority" : "High"
+# }
+
+
+
+# Требования для админа:
+# - возможность назначать роли.
+# POST   https://localhost:5001/api/userroles/setrole
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjAzMjY1NTkyLCJleHAiOjE2MDMyNjczOTIsImlhdCI6MTYwMzI2NTU5Mn0.QeyAevnbiaYNNqpbhe93boWZNseqEhKjGChJYZvMkes
+# Content-Type: application/json
+
+# {
+#     "UserId":3,
+#     "RoleId":1
+# }
+
+# DELETE  https://localhost:5001/api/userroles/deleterole/3
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjAzMjY1NTkyLCJleHAiOjE2MDMyNjczOTIsImlhdCI6MTYwMzI2NTU5Mn0.QeyAevnbiaYNNqpbhe93boWZNseqEhKjGChJYZvMkes
+# Content-Type: application/json
+
+# {
+#     "RoleId":1
+# }
+
+
+# - просмотр списка пользователей.
+
+# GET https://localhost:5001/api/users
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjAzMjY3NDQwLCJleHAiOjE2MDMyNjkyNDAsImlhdCI6MTYwMzI2NzQ0MH0.-FwVJKO3HDT8VMNnYF2ySOiuCKurJpgOzMc7IHsuc1w
+
+
+# - редактирование, удаление пользователей.
+# POST https://localhost:5001/api/users
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjAzMjY1NTkyLCJleHAiOjE2MDMyNjczOTIsImlhdCI6MTYwMzI2NTU5Mn0.QeyAevnbiaYNNqpbhe93boWZNseqEhKjGChJYZvMkes
+# Content-Type: application/json
+
+# {    
+#     "FirstName":"Alex",
+#     "LastName":"Klar",
+#     "Email":"alexklar@gmail.com",
+#     "Photo":null,
+#     "Birthday":"1995-07-07",
+#     "Phone":"0957777777",
+#     "Login":"alexklar",
+#     "Password":"alexklar"
+# }
+
+
+# PUT https://localhost:5001/api/users/4
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjAzMjY1NTkyLCJleHAiOjE2MDMyNjczOTIsImlhdCI6MTYwMzI2NTU5Mn0.QeyAevnbiaYNNqpbhe93boWZNseqEhKjGChJYZvMkes
+# Content-Type: application/json
+
+# {    
+#     "FirstName":"Alexandr",
+#     "LastName":"Klar",
+#     "Email":"alexklar@gmail.com",
+#     "Photo":null,
+#     "Birthday":"1995-07-31",
+#     "Phone":"0957373737",
+#     "Login":"alexklar",
+#     "Password":"alexklar"
+# }
+
+
+# DELETE  https://localhost:5001/api/users/4
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjAzMjY1NTkyLCJleHAiOjE2MDMyNjczOTIsImlhdCI6MTYwMzI2NTU5Mn0.QeyAevnbiaYNNqpbhe93boWZNseqEhKjGChJYZvMkes
+
+
+
+# - поиск пользователей по указанному параметру.
+
+# GET https://localhost:5001/api/users/search?userid=2
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjAzMjY1NTkyLCJleHAiOjE2MDMyNjczOTIsImlhdCI6MTYwMzI2NTU5Mn0.QeyAevnbiaYNNqpbhe93boWZNseqEhKjGChJYZvMkes
+
+# GET https://localhost:5001/api/users/search?firstname=Vitalii
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjAzMjY1NTkyLCJleHAiOjE2MDMyNjczOTIsImlhdCI6MTYwMzI2NTU5Mn0.QeyAevnbiaYNNqpbhe93boWZNseqEhKjGChJYZvMkes
+
+# GET https://localhost:5001/api/users/search?lastname=Yarosh
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjAzMjY3NDQwLCJleHAiOjE2MDMyNjkyNDAsImlhdCI6MTYwMzI2NzQ0MH0.-FwVJKO3HDT8VMNnYF2ySOiuCKurJpgOzMc7IHsuc1w
+
+# GET https://localhost:5001/api/users/search?email=vitaliisan@gmail.com
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjAzMjY3NDQwLCJleHAiOjE2MDMyNjkyNDAsImlhdCI6MTYwMzI2NzQ0MH0.-FwVJKO3HDT8VMNnYF2ySOiuCKurJpgOzMc7IHsuc1w
+
+# GET https://localhost:5001/api/users/search?birthday=1986-12-22
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjAzMjY3NDQwLCJleHAiOjE2MDMyNjkyNDAsImlhdCI6MTYwMzI2NzQ0MH0.-FwVJKO3HDT8VMNnYF2ySOiuCKurJpgOzMc7IHsuc1w
+
+# GET https://localhost:5001/api/users/search?phone=0983331229
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjAzMjY4MTA0LCJleHAiOjE2MDMyNjk5MDQsImlhdCI6MTYwMzI2ODEwNH0.Fq0Py9Fv2eTwwNr6KyYTOdVe6jzjgmXG1TyDBff-5G0
+
+# GET https://localhost:5001/api/users/search?login=sergyarosh
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjAzMjY4MTA0LCJleHAiOjE2MDMyNjk5MDQsImlhdCI6MTYwMzI2ODEwNH0.Fq0Py9Fv2eTwwNr6KyYTOdVe6jzjgmXG1TyDBff-5G0
+
+# GET https://localhost:5001/api/users/search?rolename=User
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjAzMjY4MTA0LCJleHAiOjE2MDMyNjk5MDQsImlhdCI6MTYwMzI2ODEwNH0.Fq0Py9Fv2eTwwNr6KyYTOdVe6jzjgmXG1TyDBff-5G0
+
+# GET https://localhost:5001/api/users/search?rolename=Admin
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjAzMjY4MTA0LCJleHAiOjE2MDMyNjk5MDQsImlhdCI6MTYwMzI2ODEwNH0.Fq0Py9Fv2eTwwNr6KyYTOdVe6jzjgmXG1TyDBff-5G0
+
+
+
+# Пагинация.
+
+# GET https://localhost:5001/api/tasks/pagination?PageNumber=2&PageSize=2
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjYyNjcxLCJleHAiOjE2MDMyNjQ0NzEsImlhdCI6MTYwMzI2MjY3MX0.4UlQLpxCJmyuEZlXFFbvI41d9Q6WJLIF4yCrWvcOH3E
+
+

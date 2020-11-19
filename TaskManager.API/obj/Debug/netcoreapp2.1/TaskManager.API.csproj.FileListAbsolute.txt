@@ -1,0 +1,42 @@
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.csprojAssemblyReference.cache
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.csproj.CoreCompileInputs.cache
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.RazorAssemblyInfo.cache
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.RazorAssemblyInfo.cs
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.AssemblyInfoInputs.cache
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.AssemblyInfo.cs
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject\TaskManager.API\bin\Debug\netcoreapp2.1\TaskManager.API.deps.json
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject\TaskManager.API\bin\Debug\netcoreapp2.1\TaskManager.API.runtimeconfig.json
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject\TaskManager.API\bin\Debug\netcoreapp2.1\TaskManager.API.runtimeconfig.dev.json
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject\TaskManager.API\bin\Debug\netcoreapp2.1\TaskManager.API.dll
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject\TaskManager.API\bin\Debug\netcoreapp2.1\TaskManager.API.pdb
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.RazorTargetAssemblyInfo.cache
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.dll
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.pdb
+C:\Users\Admin\Desktop\TaskManagerProject\TaskManagerProject\TaskManager.API\bin\Debug\netcoreapp2.1\TaskManager.API.deps.json
+C:\Users\Admin\Desktop\TaskManagerProject\TaskManagerProject\TaskManager.API\bin\Debug\netcoreapp2.1\TaskManager.API.runtimeconfig.json
+C:\Users\Admin\Desktop\TaskManagerProject\TaskManagerProject\TaskManager.API\bin\Debug\netcoreapp2.1\TaskManager.API.runtimeconfig.dev.json
+C:\Users\Admin\Desktop\TaskManagerProject\TaskManagerProject\TaskManager.API\bin\Debug\netcoreapp2.1\TaskManager.API.dll
+C:\Users\Admin\Desktop\TaskManagerProject\TaskManagerProject\TaskManager.API\bin\Debug\netcoreapp2.1\TaskManager.API.pdb
+C:\Users\Admin\Desktop\TaskManagerProject\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\TaskManagerProject\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\TaskManagerProject\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.RazorAssemblyInfo.cache
+C:\Users\Admin\Desktop\TaskManagerProject\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.RazorAssemblyInfo.cs
+C:\Users\Admin\Desktop\TaskManagerProject\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\TaskManagerProject\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.AssemblyInfo.cs
+C:\Users\Admin\Desktop\TaskManagerProject\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.RazorTargetAssemblyInfo.cache
+C:\Users\Admin\Desktop\TaskManagerProject\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.dll
+C:\Users\Admin\Desktop\TaskManagerProject\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.pdb
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject-2020-10-21\TaskManagerProject\TaskManagerProject\TaskManager.API\bin\Debug\netcoreapp2.1\TaskManager.API.deps.json
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject-2020-10-21\TaskManagerProject\TaskManagerProject\TaskManager.API\bin\Debug\netcoreapp2.1\TaskManager.API.runtimeconfig.json
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject-2020-10-21\TaskManagerProject\TaskManagerProject\TaskManager.API\bin\Debug\netcoreapp2.1\TaskManager.API.runtimeconfig.dev.json
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject-2020-10-21\TaskManagerProject\TaskManagerProject\TaskManager.API\bin\Debug\netcoreapp2.1\TaskManager.API.dll
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject-2020-10-21\TaskManagerProject\TaskManagerProject\TaskManager.API\bin\Debug\netcoreapp2.1\TaskManager.API.pdb
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject-2020-10-21\TaskManagerProject\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.csprojAssemblyReference.cache
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject-2020-10-21\TaskManagerProject\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.csproj.CoreCompileInputs.cache
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject-2020-10-21\TaskManagerProject\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.RazorAssemblyInfo.cache
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject-2020-10-21\TaskManagerProject\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.RazorAssemblyInfo.cs
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject-2020-10-21\TaskManagerProject\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.AssemblyInfoInputs.cache
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject-2020-10-21\TaskManagerProject\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.AssemblyInfo.cs
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject-2020-10-21\TaskManagerProject\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.RazorTargetAssemblyInfo.cache
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject-2020-10-21\TaskManagerProject\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.dll
+E:\DZ-ITStep\ASP.NET Core\DZ-ASPNET_CORE\TaskManagerProject-2020-10-21\TaskManagerProject\TaskManagerProject\TaskManager.API\obj\Debug\netcoreapp2.1\TaskManager.API.pdb
