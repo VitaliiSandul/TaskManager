@@ -11,3 +11,56 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.btn-custom{
+  min-width: 100px;
+  height: 30px;
+}
+
+.elem{
+  width: 95%;
+  margin: 10px auto;
+}
+
+.elem_center_50{
+  width: 95%;
+  margin: 50px auto;
+}
+
+.elem_border{
+  width: 320px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+.elem-center{
+  display: flex;
+  justify-content: center;
+}
+
+.elem-around{
+  display: flex;
+  justify-content: space-around;
+}
+
+input{
+  height: 30px;
+  width: 180px;
+}
+
+input[type='submit'] {
+  background: dodgerblue;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  height: 35px;
+  border-color: transparent;
+  outline: none;
+  transition: 0.15s;
+  text-align: center;
+}
+
+input[type='submit']:hover {
+  background-color: springgreen;
+}
