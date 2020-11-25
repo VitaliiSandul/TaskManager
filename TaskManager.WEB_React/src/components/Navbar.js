@@ -48,11 +48,8 @@ const Navbar = (props) => {
         </div>
 
         <div style={{display: props.isLogin ? 'block' : 'none' }}>
-
-        <button className="btn btn-outline-light" onClick={() => props.logout()}>Log out</button>
-            {/* <Link className="btn btn-outline-light" to="/">Log out</Link> */}
+            <button className="btn btn-outline-light" onClick={() => props.logout()}>Log out</button>
         </div>
-            
         
       </div>
     </nav>
@@ -70,4 +67,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Navbar);
-// export default Navbar;

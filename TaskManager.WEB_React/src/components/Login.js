@@ -3,7 +3,6 @@ import axios from "axios"
 import { connect } from "react-redux"
 import { login } from "../actionCreators/userActionCreators"
 
-
 class Login extends Component {
   constructor(props) {
     super(props)
@@ -80,12 +79,10 @@ class Login extends Component {
               <div className="py-3" >
                 <input className="w-100" type='submit' value="Log In"/>                  
               </div>
-              
-  
+
             </form>
   
-        </div>
-        
+        </div>        
       )
 
     } else {
