@@ -22,7 +22,7 @@ import {
 // let store = createStore(counterReducer, initialState)
 
 
-const initialState = {isLogin: false, user: {userId: "", login: ""}}
+const initialState = {isLogin: false, user: {}}
 let store = createStore(userReducer, initialState)
 
 ReactDOM.render(

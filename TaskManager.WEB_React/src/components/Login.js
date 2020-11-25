@@ -28,7 +28,7 @@ class Login extends Component {
       headers: { 'Content-Type': 'application/json' },
       data: JSON.stringify({login: this.state.username, password: this.state.password})
     }).then((response) => {
-                            this.props.dispatch(login(response))
+                            this.props.login(response.data)
                             console.log(response.data)
                           }
     ).catch(function (response) {
@@ -78,8 +78,7 @@ class Login extends Component {
               </div>
   
               <div className="py-3" >
-                  <input className="w-100" type='submit' value="Log In" onClick={() => this.props.login()}/>
-                  
+                <input className="w-100" type='submit' value="Log In"/>                  
               </div>
               
   
@@ -92,10 +91,8 @@ class Login extends Component {
     } else {
       return(
         <div>Some information</div>
-      )
-      
+      )      
     }
-    // const isLoggedIn = this.props.isLogin;
     
   }
 }

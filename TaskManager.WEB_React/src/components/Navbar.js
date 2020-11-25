@@ -9,13 +9,7 @@ const Navbar = (props) => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container">
         <Link className="navbar-brand" href="/">
-            <div style={{display: !props.isLogin ? 'block' : 'none' }}>
-                Unknown
-            </div>
-
-            <div style={{display: props.isLogin ? 'block' : 'none' }}>
-                Authorized
-            </div>
+            { props.isLogin ? <div>{props.user.login}</div> : <div>Unknown</div> }
         </Link>
         <button
           className="navbar-toggler"
