@@ -6,6 +6,8 @@ import Home from './components/Home'
 import Login from './components/Login'
 import NotFound from './components/NotFound'
 import Navbar from './components/Navbar'
+import Tasks from './components/Tasks'
+import EditTask from './components/EditTask'
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import userReducer from './reducers/userReducer'
@@ -29,6 +31,8 @@ ReactDOM.render(
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/tasks" component={Tasks} />
+            <Route path="/edittask/:id" component={EditTask} />
             <Route component={NotFound} />
           </Switch>
         </div>

@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import axios from "axios"
 import { connect } from "react-redux"
 import { login } from "../actionCreators/userActionCreators"
+import {Redirect} from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {
@@ -87,7 +88,7 @@ class Login extends Component {
 
     } else {
       return(
-        <div>Some information</div>
+        <Redirect to={"/tasks"} />
       )      
     }
     
