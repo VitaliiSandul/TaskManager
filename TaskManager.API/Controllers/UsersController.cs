@@ -16,12 +16,15 @@ namespace TaskManager.API.Controllers
     [ApiController]
     public class UsersController : Controller
     {
+        private readonly IUserRoleService userRoleService;
         private readonly IAppUserService userService;
         private readonly IMapper mapper;
-        public UsersController(IAppUserService userService, IMapper mapper)
+
+        public UsersController(IUserRoleService userRoleService, IAppUserService userService, IMapper mapper)
         {
+            this.userRoleService = userRoleService;
             this.userService = userService;
-            this.mapper = mapper;
+            this.mapper = mapper;            
         }
 
         [HttpGet]
@@ -45,7 +48,9 @@ namespace TaskManager.API.Controllers
             if (!result.Success)
                 return BadRequest(result.Message);
             
+            await userRoleService.SetUserRoleAsync(result.AppUser.UserId, 2);
             var userResource = mapper.Map<AppUser, AppUserResource>(result.AppUser);
+
             return Ok(userResource);
         }
 
@@ -65,7 +70,6 @@ namespace TaskManager.API.Controllers
             return Ok(userResource);
         }
 
-
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
@@ -77,7 +81,6 @@ namespace TaskManager.API.Controllers
             var userResource = mapper.Map<AppUser, AppUserResource>(result.AppUser);
             return Ok(userResource);
         }
-
 
         [HttpGet("search")]
         public async Task<IActionResult> SearchAsync([FromQuery] UserSearchOptions searchOptions)

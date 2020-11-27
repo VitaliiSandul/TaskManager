@@ -29,10 +29,10 @@ namespace TaskManager.API.Persistence.Repositories
                 predicate = predicate.And(x => x.UserId == searchOptions.UserId);
 
             if (!string.IsNullOrEmpty(searchOptions.TaskTitle))
-                predicate = predicate.And(x => x.TaskTitle.Contains(searchOptions.TaskTitle));
+                predicate = predicate.And(x => x.TaskTitle.ToLower().Contains(searchOptions.TaskTitle.ToLower()));
                 
             if (!string.IsNullOrEmpty(searchOptions.TaskDetails))
-                predicate = predicate.And(x => x.TaskDetails.Contains(searchOptions.TaskDetails));
+                predicate = predicate.And(x => x.TaskDetails.ToLower().Contains(searchOptions.TaskDetails.ToLower()));
             
             if(searchOptions.TaskCreationDate != DateTime.MinValue) 
                 predicate = predicate.And(x => x.TaskCreationDate == searchOptions.TaskCreationDate);

@@ -1,4 +1,4 @@
-# Должна быть реализована возможность регистрации и авторизации пользователей.
+# # Должна быть реализована возможность регистрации и авторизации пользователей.
 # POST https://localhost:5001/api/auth
 # Content-Type: application/json
 
@@ -22,7 +22,7 @@
 # - возможность создавать, удалять, редактировать, просматривать список задач.
 
 # GET https://localhost:5001/api/tasks
-# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjY0NzgwLCJleHAiOjE2MDMyNjY1ODAsImlhdCI6MTYwMzI2NDc4MH0.M63gsP9EHTbybdLd9xAoL0E7ILUxrQlOOH9pzsp_RCY
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjA2Mzg5NTMwLCJleHAiOjE2MDYzOTEzMzAsImlhdCI6MTYwNjM4OTUzMH0.YVibUuZF9Pch_ek0H56Zd8HDqgTnwfHiTo1wGobKAhI
 
 # POST https://localhost:5001/api/tasks
 # Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjYyNjcxLCJleHAiOjE2MDMyNjQ0NzEsImlhdCI6MTYwMzI2MjY3MX0.4UlQLpxCJmyuEZlXFFbvI41d9Q6WJLIF4yCrWvcOH3E
@@ -222,3 +222,16 @@
 # Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjYyNjcxLCJleHAiOjE2MDMyNjQ0NzEsImlhdCI6MTYwMzI2MjY3MX0.4UlQLpxCJmyuEZlXFFbvI41d9Q6WJLIF4yCrWvcOH3E
 
 
+POST https://localhost:5001/api/users
+Content-Type: application/json
+
+{    
+    "FirstName":"Alex",
+    "LastName":"Klar",
+    "Email":"alexklar@gmail.com",
+    "Photo":null,
+    "Birthday":"1995-07-07",
+    "Phone":"0957777777",
+    "Login":"alexklar",
+    "Password":"alexklar"
+}

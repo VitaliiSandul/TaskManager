@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 import { useHistory, useParams } from "react-router-dom"
 import {connect} from 'react-redux'
+import {resetAppTasks} from "../actionCreators/userActionCreators"
 
 const EditTask = (props) => {
   const URL = "https://localhost:5001/api/tasks"
@@ -19,7 +20,7 @@ const EditTask = (props) => {
     taskPriority: "Low"    
   })
 
-  const { taskId, userId, taskTitle, taskDetails, taskCreationDate, taskStatus, taskPriority } = task
+  const { taskId, taskTitle, taskDetails, taskCreationDate, taskStatus, taskPriority } = task
 
   const onInputChange = e => {
     setTask({ ...task, [e.target.name]: e.target.value })
@@ -68,6 +69,7 @@ const EditTask = (props) => {
             console.log(response);
         })
     }
+    props.resetAppTasks()
   }
 
   const loadTask = async () => {
@@ -170,4 +172,10 @@ function mapStateToProps(state) {
     return state
 }
 
-export default connect(mapStateToProps)(EditTask);
+function mapDispatchToProps(dispatch) {
+  return {
+      resetAppTasks: () => dispatch(resetAppTasks())
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(EditTask);

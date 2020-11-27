@@ -17,7 +17,7 @@ import {
   Switch
 } from "react-router-dom";
 
-const initialState = {isLogin: false, user: {}}
+const initialState = {isLogin: false, user: {}, apptasks: []}
 let store = createStore(userReducer, initialState)
 
 ReactDOM.render(
