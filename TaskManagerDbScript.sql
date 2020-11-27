@@ -23,7 +23,7 @@ create table [AppUser]
 	Photo varchar(250),
 	Birthday Date,
 	Phone varchar(15),
-	"Login" varchar(100),
+	"Login" varchar(100) UNIQUE,
 	"Password" varchar(100),
 	Token varchar(250)
 );
