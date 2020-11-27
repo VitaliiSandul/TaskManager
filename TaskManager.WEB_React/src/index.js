@@ -4,6 +4,7 @@ import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Home from './components/Home'
 import Login from './components/Login'
+import Register from './components/Register'
 import NotFound from './components/NotFound'
 import Navbar from './components/Navbar'
 import Tasks from './components/Tasks'
@@ -31,6 +32,7 @@ ReactDOM.render(
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
             <Route exact path="/tasks" component={Tasks} />
             <Route path="/edittask/:id" component={EditTask} />
             <Route component={NotFound} />

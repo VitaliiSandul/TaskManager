@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import axios from "axios"
 import { connect } from "react-redux"
 import { login } from "../actionCreators/userActionCreators"
-import {Redirect} from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {
@@ -77,6 +77,10 @@ class Login extends Component {
                   </div>
               </div>
   
+              <div className="py-3 text-right" >
+                <Link to="/register">Register new account</Link>                                  
+              </div>
+
               <div className="py-3" >
                 <input className="w-100" type='submit' value="Log In"/>                  
               </div>
