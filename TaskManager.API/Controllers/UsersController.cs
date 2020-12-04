@@ -12,7 +12,7 @@ using TaskManager.API.Resources;
 namespace TaskManager.API.Controllers
 {
     [Route("/api/[controller]")]
-    [Authorize(Roles="Admin")]
+    [Authorize(Roles="Admin,User")]
     [ApiController]
     public class UsersController : Controller
     {
@@ -53,7 +53,7 @@ namespace TaskManager.API.Controllers
 
             return Ok(userResource);
         }
-
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAsync(int id, [FromBody]SaveAppUserResource resource)
         {
@@ -70,6 +70,7 @@ namespace TaskManager.API.Controllers
             return Ok(userResource);
         }
 
+        [Authorize(Roles="Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {

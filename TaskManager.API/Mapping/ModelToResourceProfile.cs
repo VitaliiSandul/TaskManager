@@ -13,6 +13,7 @@ namespace Shop.API.Mapping
             CreateMap<AppUser, AppUserResource>();
             CreateMap<AppUser, AppUserResource>()
                 .ForMember(x => x.Role, y => y.MapFrom(s => s.UserRoles.Select(z => z.AppRole.RoleName)));
+            CreateMap<AppRole, AppRoleResource>();
         }
     }
 }

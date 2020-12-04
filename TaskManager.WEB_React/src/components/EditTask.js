@@ -6,8 +6,7 @@ import {resetAppTasks} from "../actionCreators/userActionCreators"
 
 const EditTask = (props) => {
   const URL = "https://localhost:5001/api/tasks"
-  const AuthStr = (props.user !== undefined) ? `Bearer ${props.user.token}` : ""
-
+  const AuthStr = (props.user !== undefined) ? `Bearer ${props.user.token}` : ""  
   const { id } = useParams()
   const history = useHistory()
   const [task, setTask] = useState({
@@ -106,11 +105,8 @@ const EditTask = (props) => {
   return (
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
-        <h2 className="text-center mb-4">Task information:</h2>
+        <h3 className="text-center mb-3">Task information:</h3>
         <form onSubmit={e => onSubmit(e)}>
-          <div className="form-group"> 
-                taskId: {taskId}
-          </div>
           <div className="form-group">
             <input
               type="text"

@@ -10,7 +10,8 @@ namespace TaskManager.API.Mapping
         {
             CreateMap<SaveAppTaskResource, AppTask>();   
             CreateMap<AppUserResource, AppUser>(); 
-            CreateMap<SaveAppUserResource, AppUser>();                               
+            CreateMap<SaveAppUserResource, AppUser>(); 
+            CreateMap<SaveAppRoleResource, AppRole>();                              
         }
     }
 }

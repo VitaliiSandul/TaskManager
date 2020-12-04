@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-size: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -48,6 +49,16 @@ code {
   justify-content: space-between;
 }
 
+.home-img {
+  height: 450px;
+  width: auto;
+}
+
+.home-img img {
+  height: 100%;
+  width: auto;
+}
+
 input{
   height: 30px;
   width: 180px;
@@ -72,4 +83,46 @@ input[type='submit']:hover {
 
 .margin_table{
   margin: 10px 20px;
+}
+
+.login_component {
+  background-image: url(./images/login-background.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.register_component {
+  background-image: url(./images/register-background.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.settings_component {
+  background-image: url(./images/settings-background.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+@media screen and (max-width : 480px)
+{
+  td, th
+  {
+    font-size: small;
+  }
+}
+@media screen and (max-width : 1204px)
+{
+  td, th
+  {
+    font-size: 0.5em !important;
+  }
 }

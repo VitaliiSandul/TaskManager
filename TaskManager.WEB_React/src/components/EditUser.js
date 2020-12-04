@@ -1,23 +1,27 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
+import { useHistory } from "react-router-dom"
 import axios from "axios"
 import {connect} from 'react-redux'
-import { useHistory } from "react-router-dom"
+import { login } from "../actionCreators/userActionCreators"
+import {isEmpty} from '../Helpers/HelpFunctions'
 
-const Register = (props) => {
+const EditUser = (props) => {
   const URL = "https://localhost:5001/api/users"
+  const AuthStr = (!isEmpty(props.user)) ? `Bearer ${props.user.token}` : ""
+  const isLoggedIn = props.isLogin
   const history = useHistory()
-  
-  const [userParams, setUserParams] = useState({
-        firstName:"",
-        lastName:"",
-        email:"",
+
+  const [userParams, setUserParams] = useState({    
+        firstName: !isEmpty(props.user) ? props.user.firstName : "",
+        lastName: !isEmpty(props.user) ? props.user.lastName : "",
+        email: !isEmpty(props.user) ? props.user.email : "",
         photo:null,
-        birthday:"",
-        phone:"",
-        login:"",
-        password:""   
-  })
-  
+        birthday: !isEmpty(props.user) ? props.user.birthday : "",
+        phone: !isEmpty(props.user) ? props.user.phone : "",
+        login: !isEmpty(props.user) ? props.user.login : "",
+        password:""
+      }) 
+
   const { firstName, lastName, email, photo, birthday, phone, login, password } = userParams
   const [confirmPassword, setConfirmPassword] = useState("")
   const [errorText, setErrorText] = useState("")
@@ -33,32 +37,47 @@ const Register = (props) => {
   const onSubmit = async e => {
     e.preventDefault()
 
-    if(password == confirmPassword){
+    if(password == confirmPassword && password != ""){
         axios({
-            method: 'post',
-            url: URL,
+            method: 'put',
+            url: `${URL}/${props.user.userId}`,
             data: userParams,
-            headers: { 'Content-Type': 'application/json' }
+            headers: {'Authorization': `${AuthStr}`, 'Content-Type': 'application/json' }
             })
             .then(function (response) {
-                history.push("/login");
+                console.log(userParams);
+                var updatedUser = {
+                    userId: props.user.userId,
+                    firstName: userParams.firstName,
+                    lastName: userParams.lastName,
+                    email: userParams.email,
+                    photo:null,
+                    birthday: userParams.birthday,
+                    phone: userParams.phone,
+                    login: userParams.login,
+                    password: userParams.password,
+                    token: props.user.token
+                }
+                props.login(updatedUser)
+                history.push("/tasks");
                 console.log(response.data);
             })
             .catch(function (response) {
                 console.log(response);
-                setErrorText("Can not register this user")
+                setErrorText("Can not change this user")
             })
     } 
     else{
         setErrorText("Error in password")
     }           
   }
-
-  return (
-    <div className="container w-50 py-3 elem_center_50 register_component ">      
+  
+  if (isLoggedIn) {        
+    return (
+    <div className="container w-50 py-3 elem_center_50 settings_component">      
         <form onSubmit={e => onSubmit(e)}>
 
-            <h1 className="text-center py-3">Registration new account:</h1>
+            <h1 className="text-center py-3">Changing user information:</h1>
 
             <div className="elem elem-center">
             
@@ -102,13 +121,12 @@ const Register = (props) => {
                                 className="form-control form-control-lg"
                                 placeholder="Enter birthday"
                                 name="birthday"
-                                value={birthday}
+                                value={(birthday).substring(0, 10)}
                                 onChange={e => onInputChange(e)}
                         />
                     </div> 
 
                 </div> 
-
 
                 <div className="px-3">
 
@@ -136,7 +154,7 @@ const Register = (props) => {
 
                     <div className="form-group">
                         <input 
-                                type="password"
+                                type="text"
                                 className="form-control form-control-lg"
                                 placeholder="Enter password"
                                 name="password"
@@ -147,7 +165,7 @@ const Register = (props) => {
 
                     <div className="form-group">
                         <input 
-                                type="password"
+                                type="text"
                                 className="form-control form-control-lg"
                                 placeholder="Confirm Password"
                                 name="confirmPassword"
@@ -160,20 +178,31 @@ const Register = (props) => {
 
             <div style={{color: 'red'}}>
                 {errorText}
-            </div>
-            
+            </div>            
             
             <div className="py-3 mx-5" >
-                <input className="w-100" type='submit' value="Register"/>                  
+                <input className="w-100" type='submit' value="Save changes"/>                  
             </div>
 
         </form>      
     </div>
-  )
+  )}
+  else{
+    return (
+        <h1 className="text-center py-5">You don't have access to this page, please log in.</h1>
+    )
+  }
+
 }
 
 function mapStateToProps(state) {
     return state
 }
 
-export default connect(mapStateToProps)(Register);
+function mapDispatchToProps(dispatch) {
+    return {
+        login: (val) => dispatch(login(val))
+    }
+}
+  
+export default connect(mapStateToProps,mapDispatchToProps)(EditUser);

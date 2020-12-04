@@ -47,7 +47,6 @@ namespace TaskManager.API
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
 
-
             var appSettings = appSettingsSection.Get<AppSettings>();
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
             services.AddAuthentication(x => 
@@ -69,7 +68,6 @@ namespace TaskManager.API
                 };
             });
 
-
             services.AddScoped<IAppUserService, AppUserService>();
             services.AddScoped<IAppUserRepository, AppUserRepository>();
             services.AddScoped<IAppRoleService, AppRoleService>();
@@ -82,7 +80,6 @@ namespace TaskManager.API
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddAutoMapper(typeof(Startup));
-
 
             services.AddHttpContextAccessor();
             services.AddSingleton<IUriService>(o =>

@@ -17,6 +17,5 @@ namespace TaskManager.API.Persistence.Repositories
         {
             return await context.AppRole.FirstOrDefaultAsync(x => x.RoleId == id);
         }
-
     }
 }

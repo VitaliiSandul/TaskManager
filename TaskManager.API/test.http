@@ -1,11 +1,11 @@
-# # Должна быть реализована возможность регистрации и авторизации пользователей.
-# POST https://localhost:5001/api/auth
-# Content-Type: application/json
+# Должна быть реализована возможность регистрации и авторизации пользователей.
+POST https://localhost:5001/api/auth
+Content-Type: application/json
 
-# {
-#     "login":"admin",
-#     "password":"admin"
-# }
+{
+    "login":"admin",
+    "password":"admin"
+}
 
 
 # POST https://localhost:5001/api/auth
@@ -22,7 +22,7 @@
 # - возможность создавать, удалять, редактировать, просматривать список задач.
 
 # GET https://localhost:5001/api/tasks
-# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjA2Mzg5NTMwLCJleHAiOjE2MDYzOTEzMzAsImlhdCI6MTYwNjM4OTUzMH0.YVibUuZF9Pch_ek0H56Zd8HDqgTnwfHiTo1wGobKAhI
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjA2NDgzNDE3LCJleHAiOjE2MDY0ODUyMTcsImlhdCI6MTYwNjQ4MzQxN30.8j22FK0TYm3uMFuHLv4DQ7k-PQQHAAy5JS3zIoMZ5Jw
 
 # POST https://localhost:5001/api/tasks
 # Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjYyNjcxLCJleHAiOjE2MDMyNjQ0NzEsImlhdCI6MTYwMzI2MjY3MX0.4UlQLpxCJmyuEZlXFFbvI41d9Q6WJLIF4yCrWvcOH3E
@@ -63,8 +63,14 @@
 
 # - поиск задач по заголовку.
 
-# GET https://localhost:5001/api/tasks/search?tasktitle=Task
-# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjYyNjcxLCJleHAiOjE2MDMyNjQ0NzEsImlhdCI6MTYwMzI2MjY3MX0.4UlQLpxCJmyuEZlXFFbvI41d9Q6WJLIF4yCrWvcOH3E
+# GET https://localhost:5001/api/tasks/search?tasktitle=task
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjA2NDkzMTI5LCJleHAiOjE2MDY0OTQ5MjksImlhdCI6MTYwNjQ5MzEyOX0._0D9tdlPEAnOi2k9jTZAhfVPX6e8ugic6ADaDqM30K0
+
+# GET https://localhost:5001/api/tasks/search?tasktitle=task&taskdetails=task
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjA2NDkzMTI5LCJleHAiOjE2MDY0OTQ5MjksImlhdCI6MTYwNjQ5MzEyOX0._0D9tdlPEAnOi2k9jTZAhfVPX6e8ugic6ADaDqM30K0
+
+# GET https://localhost:5001/api/tasks/search?tasktitle=task&taskdetails=
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjA2NDkzMTI5LCJleHAiOjE2MDY0OTQ5MjksImlhdCI6MTYwNjQ5MzEyOX0._0D9tdlPEAnOi2k9jTZAhfVPX6e8ugic6ADaDqM30K0
 
 # GET https://localhost:5001/api/tasks/search?tasktitle=Zadacha
 # Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjYyNjcxLCJleHAiOjE2MDMyNjQ0NzEsImlhdCI6MTYwMzI2MjY3MX0.4UlQLpxCJmyuEZlXFFbvI41d9Q6WJLIF4yCrWvcOH3E
@@ -124,27 +130,27 @@
 # Требования для админа:
 # - возможность назначать роли.
 # POST   https://localhost:5001/api/userroles/setrole
-# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjAzMjY1NTkyLCJleHAiOjE2MDMyNjczOTIsImlhdCI6MTYwMzI2NTU5Mn0.QeyAevnbiaYNNqpbhe93boWZNseqEhKjGChJYZvMkes
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjA2ODYyMzU1LCJleHAiOjE2MDY4NjQxNTUsImlhdCI6MTYwNjg2MjM1NX0.CK5Vrs3g6FtqIJTlokH3yYjMzGxfxCF-fYXBwQcCMdQ
 # Content-Type: application/json
 
 # {
-#     "UserId":3,
-#     "RoleId":1
+#     "UserId":1,
+#     "RoleId":3
 # }
 
-# DELETE  https://localhost:5001/api/userroles/deleterole/3
-# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjAzMjY1NTkyLCJleHAiOjE2MDMyNjczOTIsImlhdCI6MTYwMzI2NTU5Mn0.QeyAevnbiaYNNqpbhe93boWZNseqEhKjGChJYZvMkes
+# DELETE  https://localhost:5001/api/userroles/deleterole/1
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjA2OTQ2ODI2LCJleHAiOjE2MDY5NDg2MjYsImlhdCI6MTYwNjk0NjgyNn0.HfbBUrlGMAfMARg5zK8u84a6AbG7oucCD6FkTXllFJU
 # Content-Type: application/json
 
 # {
-#     "RoleId":1
+#     "RoleId":2
 # }
 
 
 # - просмотр списка пользователей.
 
 # GET https://localhost:5001/api/users
-# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjAzMjY3NDQwLCJleHAiOjE2MDMyNjkyNDAsImlhdCI6MTYwMzI2NzQ0MH0.-FwVJKO3HDT8VMNnYF2ySOiuCKurJpgOzMc7IHsuc1w
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjA2ODU5OTg2LCJleHAiOjE2MDY4NjE3ODYsImlhdCI6MTYwNjg1OTk4Nn0.vX4sJRg7z4fpw1dvgTjG9eMOBdJREyc1LxeRPqirYbw
 
 
 # - редактирование, удаление пользователей.
@@ -222,16 +228,32 @@
 # Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlNlcmdleSIsInJvbGUiOiJVc2VyIiwibmJmIjoxNjAzMjYyNjcxLCJleHAiOjE2MDMyNjQ0NzEsImlhdCI6MTYwMzI2MjY3MX0.4UlQLpxCJmyuEZlXFFbvI41d9Q6WJLIF4yCrWvcOH3E
 
 
-POST https://localhost:5001/api/users
-Content-Type: application/json
+# POST https://localhost:5001/api/users
+# Content-Type: application/json
 
-{    
-    "FirstName":"Alex",
-    "LastName":"Klar",
-    "Email":"alexklar@gmail.com",
-    "Photo":null,
-    "Birthday":"1995-07-07",
-    "Phone":"0957777777",
-    "Login":"alexklar",
-    "Password":"alexklar"
-}
+# {    
+#     "FirstName":"Alex",
+#     "LastName":"Klar",
+#     "Email":"alexklar@gmail.com",
+#     "Photo":null,
+#     "Birthday":"1995-07-07",
+#     "Phone":"0957777777",
+#     "Login":"alexklar",
+#     "Password":"alexklar"
+# }
+
+
+
+
+
+GET https://localhost:5001/api/roles
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjA2OTAyMjc2LCJleHAiOjE2MDY5MDQwNzYsImlhdCI6MTYwNjkwMjI3Nn0.Qy1AN3OjGa1-GHSYlnMY8XxSx153L5Nma_5gr5r0o1k
+
+
+# POST https://localhost:5001/api/roles
+# Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNjA2OTAyMjc2LCJleHAiOjE2MDY5MDQwNzYsImlhdCI6MTYwNjkwMjI3Nn0.Qy1AN3OjGa1-GHSYlnMY8XxSx153L5Nma_5gr5r0o1k
+# Content-Type: application/json
+
+# {    
+#     "RoleName":"SuperAdmin"
+# }

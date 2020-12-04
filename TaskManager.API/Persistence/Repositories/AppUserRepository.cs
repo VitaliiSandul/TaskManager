@@ -65,6 +65,5 @@ namespace TaskManager.API.Persistence.Repositories
             var result = search.Where(pred);
             return result;
         }
-
     }
 }

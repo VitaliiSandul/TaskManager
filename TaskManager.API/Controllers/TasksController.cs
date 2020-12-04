@@ -41,7 +41,6 @@ namespace TaskManager.API.Controllers
             return resources;
         }
 
-
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody]SaveAppTaskResource resource)
         {
@@ -74,7 +73,6 @@ namespace TaskManager.API.Controllers
             return Ok(appTaskResource);
         }
 
-
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
@@ -86,7 +84,6 @@ namespace TaskManager.API.Controllers
             var appTaskResource = mapper.Map<AppTask, AppTaskResource>(result.AppTask);
             return Ok(appTaskResource);
         }
-
 
         [HttpGet("pagination")]
         public async Task<IActionResult> Pagination([FromQuery] PaginationFilter filter)

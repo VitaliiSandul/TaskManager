@@ -2,9 +2,16 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { connect } from "react-redux"
 import { logout } from "../actionCreators/userActionCreators"
+import {isEmpty} from '../Helpers/HelpFunctions'
+import settingsimg from '../images/settings.png'
 
 const Navbar = (props) => {
-
+  
+    var ifAdmin = (props.user !== undefined && Array.isArray(props.user.role)) ? props.user.role.indexOf("Admin") > -1 : false  
+    var editUrl = (props.user !== undefined && !isEmpty(props.user)) ? `/edituser/${props.user.userId}` : ""
+    
+    console.log("editUrl")
+    console.log(editUrl)
   return (      
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container">
@@ -30,16 +37,21 @@ const Navbar = (props) => {
                 Home
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" exact to="/tasks">
-                Tasks
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" exact to="/roles">
-                Roles
-              </NavLink>
-            </li>
+
+            { props.isLogin ? 
+                              <li className="nav-item">
+                                <NavLink className="nav-link" exact to="/tasks">
+                                  Tasks
+                                </NavLink>
+                              </li> : <div></div>}
+
+            { (props.isLogin && ifAdmin) ? 
+                                            <li className="nav-item">
+                                              <NavLink className="nav-link" exact to="/users">
+                                                Users
+                                              </NavLink>
+                                            </li> : <div></div>}           
+
           </ul>
         </div>
 
@@ -50,6 +62,10 @@ const Navbar = (props) => {
         <div style={{display: props.isLogin ? 'block' : 'none' }}>
             <button className="btn btn-outline-light" onClick={() => props.logout()}>Log out</button>
         </div>
+        
+          {<Link className="navbar-brand" to={editUrl}>
+              { props.isLogin ? <div><img src={settingsimg} height="40" width="40" className="ml-4" title="Settings"/></div> : <div></div> }
+          </Link>}
         
       </div>
     </nav>

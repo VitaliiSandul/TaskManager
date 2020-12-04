@@ -35,7 +35,6 @@ namespace TaskManager.API.Controllers
             return Ok(appUserResource);
         }
 
-
         [HttpDelete]
         [Route("deleterole/{id}")]
         public async Task<IActionResult> DeleteRole(int id, [FromBody]SaveUserRoleResource resource)

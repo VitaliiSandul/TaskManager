@@ -9,6 +9,8 @@ import NotFound from './components/NotFound'
 import Navbar from './components/Navbar'
 import Tasks from './components/Tasks'
 import EditTask from './components/EditTask'
+import Users from './components/Users'
+import EditUser from './components/EditUser'
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
 import userReducer from './reducers/userReducer'
@@ -35,6 +37,8 @@ ReactDOM.render(
             <Route exact path="/register" component={Register} />
             <Route exact path="/tasks" component={Tasks} />
             <Route path="/edittask/:id" component={EditTask} />
+            <Route exact path="/users" component={Users} />
+            <Route exact path="/edituser/:id" component={EditUser} />
             <Route component={NotFound} />
           </Switch>
         </div>

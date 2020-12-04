@@ -2,9 +2,11 @@ import React, { useEffect} from 'react'
 import {connect} from 'react-redux'
 import {setAppTasks} from "../actionCreators/userActionCreators"
 import {Link} from 'react-router-dom'
-import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 import Search from './Search' 
+import editimg from '../images/edit.png'
+import deleteimg from '../images/delete.png'
+import addtaskimg from '../images/addtask.png'
 
 function Tasks(props) {
     const url = `https://localhost:5001/api/tasks`    
@@ -40,13 +42,13 @@ function Tasks(props) {
             <div>                
                 <div className="margin_table">
                     <div className="d-flex">
-                        <Button variant="outline-success" className="w-25 form-group">
-                            <Link to={{pathname: `edittask/0`}}>Add new task</Link>
-                        </Button>
-
+                        <div>
+                            <Link to={{pathname: `edittask/0`}}>
+                                <img src={addtaskimg} height="40" width="40" alt="AddTask" title="Add New Task"/>                                            
+                            </Link>
+                        </div>
                         <Search className="w-75"/>
-                    </div>
-                    
+                    </div>                    
 
                     <table className="table table table-striped table-bordered">
                         <thead className="thead-dark">
@@ -72,20 +74,20 @@ function Tasks(props) {
                                 <td className="text-center" style={{color: x.taskStatus ? 'green' : 'red'}}>{(x.taskStatus) ? "Completed" : "Running"}</td>
                                 <td className="text-center">{x.taskPriority}</td>
                                 <td className="text-center">
-                                    <Button variant="outline-danger" onClick={() => removeTask(x.taskId)}>
-                                        Remove
-                                    </Button>
+                                    <div>
+                                        <img src={deleteimg} onClick={() => removeTask(x.taskId)} height="40" width="40" alt="Delete" title="Delete" style={{ cursor: 'pointer' }}/>
+                                    </div>                                    
                                 </td>
                                 <td className="text-center">
-                                    <Button variant="outline-primary" >
-                                        <Link to={{pathname: `edittask/${x.taskId}`}}>Edit</Link>
-                                    </Button>
+                                    <div >
+                                        <Link to={{pathname: `edittask/${x.taskId}`}}>
+                                            <img src={editimg} height="40" width="40" alt="Edit" title="Edit"/>                                            
+                                        </Link>
+                                    </div>
                                 </td>
                             </tr>)}
                         </tbody>
-                    </table> 
-                    
-                    
+                    </table>
 
                 </div>           
             </div>
